@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import './App.css';
+
 export default function FeedbackModal({ chatId, onClose }) {
   const [rating, setRating] = useState(0);
   const [text, setText] = useState('');

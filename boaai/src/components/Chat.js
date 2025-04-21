@@ -3,6 +3,10 @@ import ChatInput from './ChatInput';
 import Message from './Message';
 import FeedbackModal from './FeedbackModal';
 import data from '../data/responses.json';
+import Rating from './Rating';
+
+import './App.css';
+
 
 export default function Chat({ chatId }) {
   const [messages, setMessages] = useState([]);
@@ -22,7 +26,10 @@ export default function Chat({ chatId }) {
 
   return (
     <div className="chat">
-      <h1>How Can I Help You Today?</h1>
+      <header className="header">
+  <h1>Bot AI</h1>
+</header>
+
       <div className="messages">
         {messages.map((msg, idx) => (
           <Message key={idx} message={msg} />
@@ -34,3 +41,10 @@ export default function Chat({ chatId }) {
     </div>
   );
 }
+
+const handleRatingSubmit = (value) => {
+  console.log('Rated:', value);
+  // Optionally save in localStorage or backend
+};
+
+<Rating onRate={handleRatingSubmit} />

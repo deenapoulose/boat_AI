@@ -1,3 +1,5 @@
+import '../App.css'
+
 export default function History() {
     const chats = JSON.parse(localStorage.getItem('chats') || '[]');
     return (
